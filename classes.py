@@ -44,7 +44,9 @@ class Receita:
             print(file.read())
             file.close()
         
-    
+        else:
+            print("\nReceita não encontrada.")
+        
          
 
         
