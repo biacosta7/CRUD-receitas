@@ -18,23 +18,24 @@ while True:
 
         origemInput = input("Digite a origem: ").capitalize()
         
-        ingredientesInput = input("Digite os ingredientes(separados por ; ): ")
-        ingredientesLista = ingredientesInput.split("; ")
+        ingredientesLista = input("Digite os ingredientes(separados por ; ): ").split(";")
         
         modo_de_preparoInput = input("Digite o modo de preparo: ")
 
         receita = Receita(nomeInput, origemInput, ingredientesLista, modo_de_preparoInput)
 
-        print(f"""Nome: {receita.nome}
-        Origem: {receita.origem}
-        Ingredientes: {receita.ingredientes}
-        Modo de preparo: {receita.modo_de_preparo}""")
+        # print(f"""Nome: {receita.nome}
+        # Origem: {receita.origem}
+        # Ingredientes: {receita.ingredientes}
+        # Modo de preparo: {receita.modo_de_preparo}""")
         
         receita.adicionar(receita)
 
     elif opcao == 2:
-        pass
-    
+        Receita.visualizarTodas()
+        receita = input("\nDigite o nome da receita desejada: ").capitalize()
+        Receita.buscarReceita(receita)
+
     elif opcao == 3:
         pass
     
