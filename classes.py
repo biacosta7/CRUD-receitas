@@ -1,4 +1,5 @@
 import os
+import random
 
 class Receita:
     def __init__(self, nome, origem, ingredientes, modo_de_preparo):
@@ -28,7 +29,6 @@ class Receita:
     
     def visualizarTodas():
         #abre o diretório (pasta) Receitas
-        global pasta_receitas
         pasta_receitas = os.listdir("Receitas")
 
         print("=========== Lista de Receitas ===========")
@@ -37,6 +37,8 @@ class Receita:
              print(os.path.splitext(receita)[0])
 
     def buscarReceita(receita):
+        pasta_receitas = os.listdir("Receitas")
+
         nome_arquivo = f"{receita}.txt"
         #verifica se a receita do input do usuário está no diretório Receitas
         if nome_arquivo in pasta_receitas:
@@ -46,8 +48,15 @@ class Receita:
         
         else:
             print("\nReceita não encontrada.")
-        
-         
+    
+    def sugerirReceita():
+        lista_receitas = []
+        pasta_receitas = os.listdir("Receitas")
 
+        for receita in pasta_receitas:
+            lista_receitas.append(os.path.splitext(receita)[0])
         
+        sugestao = random.choice(lista_receitas)
+        print(f"Receita sugerida: {sugestao}")
 
+        return sugestao

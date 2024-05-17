@@ -6,7 +6,8 @@ while True:
 [2] Visualizar
 [3] Atualizar
 [4] Excluir
-[5] Sair 
+[6] Sugestão de receita
+[7] Sair 
 """))
 
     if opcao == 5:
@@ -39,8 +40,19 @@ while True:
     elif opcao == 3:
         pass
     
-    elif opcao == 4:
-        pass
+    elif opcao == 6:
+        while True:
+            sugestao = Receita.sugerirReceita()
 
+            op = int(input("\nDeseja ver a receita ou receber outra sugestão?\n[1] Ver receita\n[2] Receber outra sugestão\n"))
 
+            if op == 1:
+                Receita.buscarReceita(sugestao)
+                break
+            
+            elif op == 2:
+                continue
+            
+            else:
+                print("Resposta inválida. Tente novamente")
 
