@@ -6,11 +6,13 @@ while True:
 [2] Visualizar
 [3] Atualizar
 [4] Excluir
-[6] Sugestão de receita
+[5] Filtrar por país
+[6] Sugestão de receita 
 [7] Sair 
+
 """))
 
-    if opcao == 5:
+    if opcao == 6:
         break
 
     if opcao == 1:
@@ -40,6 +42,15 @@ while True:
     elif opcao == 3:
         pass
     
+    elif opcao == 4:
+        Receita.visualizarTodas()
+        excluir = input("\nDigite o nome da receita que deseja excluir: ").capitalize()
+        Receita.exclusao(excluir)
+
+    elif opcao == 5:
+        nacionalidade = input("Insira de qual país você deseja visualizar as receitas: ").capitalize()
+        Receita.filtrarPais(nacionalidade)
+
     elif opcao == 6:
         while True:
             sugestao = Receita.sugerirReceita()

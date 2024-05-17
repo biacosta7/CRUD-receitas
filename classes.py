@@ -49,6 +49,40 @@ class Receita:
         else:
             print("\nReceita não encontrada.")
     
+    def exclusao(receita):
+        try:
+            nome_arquivo = f"{receita}.txt"
+            os.remove(f"./Receitas/{nome_arquivo}")
+        except FileNotFoundError:
+            print("Receita não encontrada.")
+
+    def filtrarPais(pais):
+        paisreceita = {}
+        global pasta_receitas
+        pasta_receitas = os.listdir("Receitas")
+        for receita in pasta_receitas:
+            nome_arquivo = f"{receita}"
+            file = open(f"./Receitas/{nome_arquivo}", "r")
+            lines = file.readlines()
+            file.close()
+            for line in lines:
+                if line.strip() == f"Origem: {pais.capitalize()}":
+                    if pais in paisreceita:
+                        paisreceita[pais].append(receita)
+                    else:
+                        paisreceita[pais] = [receita]
+        if pais in paisreceita:
+            if pais.endswith("a"):
+                print(f"\n=========== Lista de Receitas da {pais} ===========")
+                for receita in paisreceita[pais]:
+                    print(os.path.splitext(receita)[0])
+            else:
+                print(f"\n=========== Lista de Receitas do {pais} ===========")
+                for receita in paisreceita[pais]:
+                    print(os.path.splitext(receita)[0])
+        else:
+            print("O país selecionado ainda não possui receitas a apresentar.")
+    
     def sugerirReceita():
         lista_receitas = []
         pasta_receitas = os.listdir("Receitas")
