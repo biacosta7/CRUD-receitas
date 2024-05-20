@@ -94,3 +94,21 @@ class Receita:
         print(f"Receita sugerida: {sugestao}")
 
         return sugestao
+
+    def atualizarReceita(receita_escolhida):
+        ingredientes = ""
+        modo_de_preparo = ""
+        global pasta_receitas
+        pasta_receitas = os.listdir("./Receitas")
+        file = open(f"./Receitas/{receita_escolhida}.txt", "r")
+        lines = file.readlines()
+        for line in lines:
+            if "Nome:" in line:
+                nome = line.replace("Nome:", "").strip()
+            if "Origem:" in line:
+                origem = line.replace("Origem:", "").strip()
+            if "Ingredientes:" in line:
+                ingredientes = line.replace("Ingredientes:", "").strip()
+            if "Modo de preparo:" in line:
+                modo_de_preparo = line.replace("Modo de preparo:", "").strip()
+        file.close()
