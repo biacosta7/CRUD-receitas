@@ -112,3 +112,9 @@ class Receita:
             if "Modo de preparo:" in line:
                 modo_de_preparo = line.replace("Modo de preparo:", "").strip()
         file.close()
+        print("O que você deseja atualizar na receita?")
+        print("1. Nome")
+        print("2. Origem")
+        print("3. Ingredientes")
+        print("4. Modo de preparo")
+        escolha = input("Escolha o número correspondente ao atributo que deseja atualizar: ")
