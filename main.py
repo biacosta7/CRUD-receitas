@@ -7,10 +7,11 @@ while True:
 [3] Atualizar
 [4] Excluir
 [5] Filtrar por país
-[6] Sair 
+[6] Lista de favoritos
+[7] Sair 
 """))
 
-    if opcao == 6:
+    if opcao == 7:
         break
 
     if opcao == 1:
@@ -44,10 +45,9 @@ while True:
         Receita.visualizarTodas()
         excluir = input("\nDigite o nome da receita que deseja excluir: ").capitalize()
         Receita.exclusao(excluir)
+        print("Receita excluída com sucesso!")
 
     elif opcao == 5:
         nacionalidade = input("Insira de qual país você deseja visualizar as receitas: ").capitalize()
         Receita.filtrarPais(nacionalidade)
-
-
-
+    
