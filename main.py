@@ -85,6 +85,3 @@ while True:
 
     elif opcao == 8:
         pass
-
-    elif opcao == 9:
-        break
