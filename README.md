@@ -34,13 +34,13 @@ O programa deve:
 ## 3. Progresso atual
 
 Lista de requisitos:
-[x] Menu interativo no terminal 
-[x] Função adicionar 
-[x] Função visualizar 
-[x] Função deletar 
-[x] Função filtrar por país 
-[x] Função atualizar 
-[x] Função de estatísticas de uso 
+[x] Menu interativo no terminal \**
+[x] Função adicionar \**
+[x] Função visualizar \**
+[x] Função deletar \**
+[x] Função filtrar por país \**
+[x] Função atualizar \**
+[x] Função de estatísticas de uso \**
 
 ## 4. Briefing do projeto
 
