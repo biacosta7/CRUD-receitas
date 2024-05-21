@@ -9,6 +9,7 @@ while True:
 [5] Filtrar por país
 [6] Sugestão de receita 
 [7] Sair 
+[8] Lista de favoritos
 
 """))
 
@@ -66,4 +67,18 @@ while True:
             
             else:
                 print("Resposta inválida. Tente novamente")
+     elif opcao == 8:
+        favoritos = []
+        while True:
+            Receita.mostrarmenu()
+            opcao = input("Escolha uma opção (1/2/3): ")
+            if opcao == '1':
+                Receita.adicionarfavorito(favoritos)
+            elif opcao == '2':
+                Receita.verfavoritos(favoritos)
+            elif opcao == '3':
+                print("Saindo do programa. Até mais!")
+                break
+            else:
+                print("Opção inválida. Por favor, tente novamente.")
 
