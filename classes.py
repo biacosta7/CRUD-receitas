@@ -92,7 +92,7 @@ class Receita:
         print("3. Sair")
 
     def adicionarfavorito(favoritos):
-        pasta_receitas = os.listdir("Receitas")
+        pasta_receitas = os.listdir("./Receitas")
         receita = input("Digite o nome da receita que deseja adicionar aos favoritos (sem extensão): ").capitalize()
 
         nome_arquivo = f"{receita}.txt"
