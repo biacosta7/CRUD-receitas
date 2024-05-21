@@ -91,9 +91,25 @@ class Receita:
         print("2. Ver receitas favoritas")
         print("3. Sair")
 
-        def adicionarfavorito(favoritos):
+    def adicionarfavorito(favoritos):
         pasta_receitas = os.listdir("Receitas")
         receita = input("Digite o nome da receita que deseja adicionar aos favoritos (sem extensão): ").capitalize()
+
+    nome_arquivo = f"{receita}.txt"
+
+        if nome_arquivo in pasta_receitas:
+            favoritos.append(receita)
+            print(f"'{receita}' foi adicionada aos favoritos.")
+        else:
+            print("Receita inválida. A receita não foi encontrada na pasta 'Receitas'.")
+
+    def verfavoritos(favoritos):
+        if favoritos:
+            print("Suas receitas favoritas:")
+            for idx, receita in enumerate(favoritos, 1):
+                print(f"{idx}. {receita}")
+        else:
+            print("Você ainda não tem receitas favoritas.")
 
     
     def sugerirReceita():
