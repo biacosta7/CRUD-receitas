@@ -118,3 +118,23 @@ class Receita:
         print("3. Ingredientes")
         print("4. Modo de preparo")
         escolha = input("Escolha o número correspondente ao atributo que deseja atualizar: ")
+        if escolha == "1":
+            novonome = input("Digite o novo nome da receita: ").capitalize()
+            os.rename(f'./Receitas/{receita_escolhida}.txt', f'./Receitas/{novonome}.txt')
+            nome = novonome
+            print(f"Nome atualizado para: {novonome}")
+            file = open(f"./Receitas/{novonome}.txt", "w")
+            file.write(f"Nome: {novonome}\n")
+            file.write(f"Origem: {origem}\n")
+            file.write(f"Ingredientes: {ingredientes}\n")
+            file.write(f"Modo de preparo: {modo_de_preparo}")
+            file.close()
+        elif escolha == "2":
+            file = open(f"./Receitas/{nome}.txt", "w")
+            novaorigem = input("Digite a nova origem da receita: ")
+            print(f"Origem atualizada para: {novaorigem}")
+            file.write(f"Nome: {nome}\n\n")
+            file.write(f"Origem: {novaorigem}\n")
+            file.write(f"Ingredientes: {ingredientes}\n")
+            file.write(f"Modo de preparo: {modo_de_preparo}\n")
+            file.close()
