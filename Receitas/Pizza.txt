@@ -1,10 +1,10 @@
-Nome: Bolo
+Nome: Pizza
 
 Origem: Italia
 
 Ingredientes:
-   - Cacau
-   - Açucar
-   - Granulado
+   - Queijo
+   - Calabresa
+   - Massa
 
 Modo de preparo: cozinhe e bote no fogo.

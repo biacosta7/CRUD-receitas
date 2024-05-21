@@ -1,0 +1,11 @@
+Nome: Bolo
+
+Origem: Brasil
+
+Ingredientes:
+   - Açúcar
+   -  chocolate
+   -  farinha
+   -  manteiga
+
+Modo de preparo: Cozinhe.

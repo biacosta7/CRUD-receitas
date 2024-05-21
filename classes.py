@@ -3,7 +3,7 @@ import random
 
 class Receita:
     global pasta_receitas
-    pasta_receitas = os.listdir("Receitas")
+    pasta_receitas = os.listdir("./Receitas")
 
     def __init__(self, nome, origem, ingredientes, modo_de_preparo):
         self.nome = nome
@@ -13,13 +13,12 @@ class Receita:
     
     #Adicionar nova receita
     def adicionar(self, receita):
-        file = open(f"Receitas/{(receita.nome).strip()}.txt", "a")
+        file = open(f"./Receitas/{(receita.nome).strip()}.txt", "a")
 
         file.write(f"""Nome: {receita.nome}\n\nOrigem: {receita.origem}\n\nIngredientes:\n""")
 
         for ingrediente in receita.ingredientes:
             file.write(f"   - {(ingrediente).capitalize()}\n")
-        #file.writelines("\n".join(receita.ingredientes).capitalize())
         
         file.write(f"\nModo de preparo: {receita.modo_de_preparo}")
 
@@ -31,6 +30,8 @@ class Receita:
         #close arquivo
     
     def visualizarTodas():
+        global pasta_receitas
+        pasta_receitas = os.listdir("./Receitas")
 
         print("=========== Lista de Receitas ===========")
         #printa as receitas (todos os arquivos da pasta, removendo a extensão .txt no nome) do diretório Receitas
@@ -38,7 +39,6 @@ class Receita:
             print(os.path.splitext(receita)[0])
 
     def buscarReceita(receita):
-        #abre o diretório (pasta) Receitas
 
         nome_arquivo = f"{receita}.txt"
         #verifica se a receita do input do usuário está no diretório Receitas
@@ -95,7 +95,7 @@ class Receita:
         pasta_receitas = os.listdir("Receitas")
         receita = input("Digite o nome da receita que deseja adicionar aos favoritos (sem extensão): ").capitalize()
 
-    nome_arquivo = f"{receita}.txt"
+        nome_arquivo = f"{receita}.txt"
 
         if nome_arquivo in pasta_receitas:
             favoritos.append(receita)
@@ -113,6 +113,8 @@ class Receita:
 
     
     def sugerirReceita():
+        global pasta_receitas
+        pasta_receitas = os.listdir("./Receitas")
         lista_receitas = []
 
         for receita in pasta_receitas:
@@ -190,18 +192,23 @@ class Receita:
             print("Escolha inválida.")
 
     def totalReceitas():
-        return len(os.listdir("Receitas"))
+        print(f"\nNúmero total de receitas cadastradas: {len(os.listdir("Receitas"))}") 
 
     def paisMaisExplorado():
+        global pasta_receitas
+        pasta_receitas = os.listdir("./Receitas")
+
         paises = []
+
         for receita in pasta_receitas:
             nome_arquivo = f"{receita}"
             file = open(f"./Receitas/{nome_arquivo}", "r")
             lines = file.readlines()
+            for line in lines:
+                if "Origem:" in line:
+                    paises.append(line[7:])
+
             file.close()
-            origem_linha = lines[2].split() # pega a linha dois e coloca-a separada por espaços numa lista
-            pais = origem_linha[1] # pega o pais que vem depois da receita (segundo elemento da lista)
-            paises.append(pais)
 
         max = 0
 
@@ -211,4 +218,4 @@ class Receita:
                 max = quant_pais
                 pais_mais_explorado = pais
             
-        print(f"País mais explorado: {pais_mais_explorado}")  
+        print(f"\nPaís mais explorado: {pais_mais_explorado}")  
