@@ -2,6 +2,9 @@ import os
 import random
 
 class Receita:
+    global pasta_receitas
+    pasta_receitas = os.listdir("Receitas")
+
     def __init__(self, nome, origem, ingredientes, modo_de_preparo):
         self.nome = nome
         self.origem = origem
@@ -28,16 +31,14 @@ class Receita:
         #close arquivo
     
     def visualizarTodas():
-        #abre o diretório (pasta) Receitas
-        pasta_receitas = os.listdir("Receitas")
 
         print("=========== Lista de Receitas ===========")
         #printa as receitas (todos os arquivos da pasta, removendo a extensão .txt no nome) do diretório Receitas
         for receita in pasta_receitas:
-             print(os.path.splitext(receita)[0])
+            print(os.path.splitext(receita)[0])
 
     def buscarReceita(receita):
-        pasta_receitas = os.listdir("Receitas")
+        #abre o diretório (pasta) Receitas
 
         nome_arquivo = f"{receita}.txt"
         #verifica se a receita do input do usuário está no diretório Receitas
@@ -58,8 +59,7 @@ class Receita:
 
     def filtrarPais(pais):
         paisreceita = {}
-        global pasta_receitas
-        pasta_receitas = os.listdir("Receitas")
+
         for receita in pasta_receitas:
             nome_arquivo = f"{receita}"
             file = open(f"./Receitas/{nome_arquivo}", "r")
@@ -82,10 +82,11 @@ class Receita:
                     print(os.path.splitext(receita)[0])
         else:
             print("O país selecionado ainda não possui receitas a apresentar.")
+        
+        return paisreceita
     
     def sugerirReceita():
         lista_receitas = []
-        pasta_receitas = os.listdir("Receitas")
 
         for receita in pasta_receitas:
             lista_receitas.append(os.path.splitext(receita)[0])
@@ -160,3 +161,27 @@ class Receita:
             file.close()
         else:
             print("Escolha inválida.")
+
+    def totalReceitas():
+        return len(os.listdir("Receitas"))
+
+    def paisMaisExplorado():
+        paises = []
+        for receita in pasta_receitas:
+            nome_arquivo = f"{receita}"
+            file = open(f"./Receitas/{nome_arquivo}", "r")
+            lines = file.readlines()
+            file.close()
+            origem_linha = lines[2].split() # pega a linha dois e coloca-a separada por espaços numa lista
+            pais = origem_linha[1] # pega o pais que vem depois da receita (segundo elemento da lista)
+            paises.append(pais)
+
+        max = 0
+
+        for pais in paises:
+            quant_pais = paises.count(pais)
+            if quant_pais > max:
+                max = quant_pais
+                pais_mais_explorado = pais
+            
+        print(f"País mais explorado: {pais_mais_explorado}")  

@@ -8,7 +8,8 @@ while True:
 [4] Excluir
 [5] Filtrar por país
 [6] Sugestão de receita 
-[7] Sair 
+[7] Ver estatísticas 
+[8] Sair
 
 """))
 
@@ -70,3 +71,20 @@ while True:
             else:
                 print("Resposta inválida. Tente novamente")
 
+    elif opcao == 7:
+        op = int(input(f"""Digite a opção que deseja ver: 
+[1] Número total de receitas cadastradas
+[2] País mais explorado 
+"""))
+
+        if op == 1:
+            print(Receita.totalReceitas())
+
+        elif op == 2:
+            Receita.paisMaisExplorado()
+
+    elif opcao == 8:
+        pass
+
+    elif opcao == 9:
+        break
