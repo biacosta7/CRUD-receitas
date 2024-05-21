@@ -1,12 +1,16 @@
 CRUD - Sistema Gerenciamento de Receitas
 
 CRUD (Adição, Leitura, Atualização e Deleção) de Sistema de Gerenciamento de descobertas gastronômicas em Python
+
+Grupo - Beatriz Costa; Gabrielle Mastellari; Maria Clara Neves; Nina Henrique França
+
 ## Índice
 1. [Descrição]
 2. [Requisitos]
 3. [Progresso atual]
 4. [Briefing do projeto]
 5. [Fluxograma do código]
+6. [Manual do usuário]
 
 ## 1. Descrição
 
@@ -49,3 +53,7 @@ Rafael é um entusiasta da culinária e adora experimentar novas receitas de div
 ## 5. Fluxograma do código
 Segue fluxograma de funcionamento do CRUD:
 https://drive.google.com/file/d/1NuzLKYhs5Se4VMYS1RjgfqUrU8YwhX8g/view?usp=sharing
+
+## 6. Manual do usuário
+Segue manual de utilização do CRUD:
+https://www.canva.com/design/DAGFzO8ohHw/kxkcVvObGfeSo8Kx-_CuSg/edit?utm_content=DAGFzO8ohHw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
