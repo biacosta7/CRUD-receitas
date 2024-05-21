@@ -96,6 +96,72 @@ class Receita:
 
         return sugestao
 
+    def atualizarReceita(receita_escolhida):
+        ingredientes = ""
+        modo_de_preparo = ""
+        global pasta_receitas
+        pasta_receitas = os.listdir("./Receitas")
+        file = open(f"./Receitas/{receita_escolhida}.txt", "r")
+        lines = file.readlines()
+        for line in lines:
+            if "Nome:" in line:
+                nome = line.replace("Nome:", "").strip()
+            if "Origem:" in line:
+                origem = line.replace("Origem:", "").strip()
+            if "Ingredientes:" in line:
+                ingredientes = line.replace("Ingredientes:", "").strip()
+            if "Modo de preparo:" in line:
+                modo_de_preparo = line.replace("Modo de preparo:", "").strip()
+        file.close()
+        print("O que você deseja atualizar na receita?")
+        print("1. Nome")
+        print("2. Origem")
+        print("3. Ingredientes")
+        print("4. Modo de preparo")
+        escolha = input("Escolha o número correspondente ao atributo que deseja atualizar: ")
+        if escolha == "1":
+            novonome = input("Digite o novo nome da receita: ").capitalize()
+            os.rename(f'./Receitas/{receita_escolhida}.txt', f'./Receitas/{novonome}.txt')
+            nome = novonome
+            print(f"Nome atualizado para: {novonome}")
+            file = open(f"./Receitas/{novonome}.txt", "w")
+            file.write(f"Nome: {novonome}\n")
+            file.write(f"Origem: {origem}\n")
+            file.write(f"Ingredientes: {ingredientes}\n")
+            file.write(f"Modo de preparo: {modo_de_preparo}")
+            file.close()
+        elif escolha == "2":
+            file = open(f"./Receitas/{nome}.txt", "w")
+            novaorigem = input("Digite a nova origem da receita: ")
+            print(f"Origem atualizada para: {novaorigem}")
+            file.write(f"Nome: {nome}\n\n")
+            file.write(f"Origem: {novaorigem}\n")
+            file.write(f"Ingredientes: {ingredientes}\n")
+            file.write(f"Modo de preparo: {modo_de_preparo}\n")
+            file.close()
+        elif escolha == "3":
+            file = open(f"./Receitas/{nome}.txt", "w")
+            novoingrediente = input("Digite os novos ingredientes da receita (separados por vírgula): ")
+            ingredientes = novoingrediente.split(", ")
+            print(f"Ingrediente atualizado para: {novoingrediente}")
+            file.write(f"Nome: {nome}\n\n")
+            file.write(f"Origem: {origem}\n")
+            file.write(f"Ingredientes: {novoingrediente}\n")
+            file.write(f"Modo de preparo: {modo_de_preparo}\n")
+            file.close()
+        elif escolha == "4":
+            file = open(f"./Receitas/{nome}.txt", "w")
+            novopreparo = input("Digite o novo modo de preparo da receita: ")
+            modo_de_preparo = novopreparo
+            print(f"Modo de preparo atualizado para: {novopreparo}")
+            file.write(f"Nome: {nome}\n\n")
+            file.write(f"Origem: {origem}\n")
+            file.write(f"Ingredientes: {ingredientes}\n")
+            file.write(f"Modo de preparo: {novopreparo}\n")
+            file.close()
+        else:
+            print("Escolha inválida.")
+
     def totalReceitas():
         return len(os.listdir("Receitas"))
 
@@ -119,5 +185,3 @@ class Receita:
                 pais_mais_explorado = pais
             
         print(f"País mais explorado: {pais_mais_explorado}")  
-        
-

@@ -41,6 +41,9 @@ while True:
         Receita.buscarReceita(receita)
 
     elif opcao == 3:
+        Receita.visualizarTodas()
+        nome_receita = input("Digite o nome da receita que deseja atualizar: ").capitalize()
+        Receita.atualizarReceita(nome_receita)
         pass
     
     elif opcao == 4:
