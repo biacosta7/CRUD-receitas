@@ -6,6 +6,7 @@ CRUD (Adição, Leitura, Atualização e Deleção) de Sistema de Gerenciamento 
 2. [Requisitos]
 3. [Progresso atual]
 4. [Briefing do projeto]
+5. [Fluxograma do código]
 
 ## 1. Descrição
 
@@ -19,7 +20,7 @@ Passo a passo de instalação e configuração:
 1. Clone este repositório `git clone https://github.com/biacosta7/CRUD-receitas.git`
 2. No VS Code, rode a aplicação com python e insira seus inputs no terminal
 
-## 3. Requisitos
+## 2. Requisitos
 
 O programa deve:
 1. Permitir que o usuário cadastre informações sobre cada receita (nome, origem, ingredientes e modo de preparo)
@@ -30,7 +31,7 @@ O programa deve:
 6. Poder sugerir uma receita aleatória ao usuário.
 7. Armazenar todas as informações de receitas em arquivos (banco de dados primitivo), desse modo, não sendo apagadas após a execução do programa
 
-## 4. Progresso atual
+## 3. Progresso atual
 
 Lista de requisitos:
 [x] Menu interativo no terminal
@@ -41,6 +42,10 @@ Lista de requisitos:
 [x] Função atualizar
 [x] Função de estatísticas de uso
 
-## 5. Briefing do projeto
+## 4. Briefing do projeto
 
 Rafael é um entusiasta da culinária e adora experimentar novas receitas de diversos países. No entanto, ele enfrenta dificuldades em organizar suas receitas favoritas e muitas vezes acaba perdendo as que mais gostou. Como um programador dedicado, você decidiu ajudá-lo a criar um sistema de Gerenciamento de Receitas para que Rafael possa manter o controle de suas descobertas gastronômicas.
+
+## 5. Fluxograma do código
+Segue fluxograma de funcionamento do CRUD:
+https://drive.google.com/file/d/1NuzLKYhs5Se4VMYS1RjgfqUrU8YwhX8g/view?usp=sharing
