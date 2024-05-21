@@ -16,7 +16,7 @@ Pacote utilizado:
 1. Python 3.12.0
 
 Passo a passo de instalação e configuração:
-1. Clone este repositório `git clone 
+1. Clone este repositório `git clone https://github.com/biacosta7/CRUD-receitas.git`
 2. No VS Code, rode a aplicação com python e insira seus inputs no terminal
 
 ## 3. Requisitos
