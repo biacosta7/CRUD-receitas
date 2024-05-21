@@ -84,6 +84,12 @@ class Receita:
             print("O país selecionado ainda não possui receitas a apresentar.")
         
         return paisreceita
+
+    def mostrarmenu():
+        print("Menu:")
+        print("1. Adicionar receita aos favoritos")
+        print("2. Ver receitas favoritas")
+        print("3. Sair")
     
     def sugerirReceita():
         lista_receitas = []
