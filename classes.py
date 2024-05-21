@@ -138,3 +138,25 @@ class Receita:
             file.write(f"Ingredientes: {ingredientes}\n")
             file.write(f"Modo de preparo: {modo_de_preparo}\n")
             file.close()
+        elif escolha == "3":
+            file = open(f"./Receitas/{nome}.txt", "w")
+            novoingrediente = input("Digite os novos ingredientes da receita (separados por vírgula): ")
+            ingredientes = novoingrediente.split(", ")
+            print(f"Ingrediente atualizado para: {novoingrediente}")
+            file.write(f"Nome: {nome}\n\n")
+            file.write(f"Origem: {origem}\n")
+            file.write(f"Ingredientes: {novoingrediente}\n")
+            file.write(f"Modo de preparo: {modo_de_preparo}\n")
+            file.close()
+        elif escolha == "4":
+            file = open(f"./Receitas/{nome}.txt", "w")
+            novopreparo = input("Digite o novo modo de preparo da receita: ")
+            modo_de_preparo = novopreparo
+            print(f"Modo de preparo atualizado para: {novopreparo}")
+            file.write(f"Nome: {nome}\n\n")
+            file.write(f"Origem: {origem}\n")
+            file.write(f"Ingredientes: {ingredientes}\n")
+            file.write(f"Modo de preparo: {novopreparo}\n")
+            file.close()
+        else:
+            print("Escolha inválida.")
